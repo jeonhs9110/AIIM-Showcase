@@ -24,6 +24,12 @@
 
 ---
 
+## 🇰🇷 프로젝트 소개 (한국어)
+
+**AIIM (AI Influencer Match)** 은 브랜드 마케팅 팀이 수많은 소셜 미디어 크리에이터 중에서 캠페인에 가장 적합한 인플루언서를 찾을 수 있도록 돕는 엔드투엔드 클라우드 플랫폼입니다. YouTube Data API v3, Meta Graph API, 그리고 자체 개발한 Selenium 인스타그램 스크래퍼를 병렬로 운영해 **14개 언어권에서 5,000명 이상의 크리에이터**를 지속적으로 수집하고, **Claude Haiku 4.5 LLM** 파이프라인으로 각 프로필의 국가·언어·브랜드 협업 이력·콘텐츠 카테고리(뷰티·패션·푸드·라이프스타일 등)를 자동 정제합니다. 복잡도 측면에서는 서로 다른 특성을 가진 세 가지 수집 파이프라인(할당량 10K/day로 제한되는 YouTube Data API, 비즈니스 계정에만 접근 가능한 Meta Graph API, 사람과 유사한 패턴으로 24시간 운영되는 병렬 Selenium 워커 두 대)을 LLM 기반 데이터 보강 층과 통합하면서, **Google Cloud(Cloud Run + Cloud SQL + Secret Manager + Artifact Registry)** 위에서 24/7 안정적으로 서비스합니다. **유의미한 결과**로는 ① 영어 구문 검색이 수렴하던 한계를 넘어 다국어 해시태그(`광고`·`スポンサー`·`رعاية` 등 14개 문자 체계) 기반 검색 전략 한 번의 30분 실행으로 YouTube 신규 크리에이터 **400명** 확보, ② 인스타그램 프로필 바이오 자동 분석을 통한 비즈니스 연락 이메일 **323건** 추출, ③ 자연어로 제품을 설명하면 AI가 근거와 함께 적합한 크리에이터 순위를 반환하는 **추천 엔진** 구현, ④ `probe-before-bulk` 원칙과 실시간 비용 추적으로 유료 API(Anthropic·YouTube·Meta)의 월간 운영 비용을 예측 가능한 범위에서 관리한 점이 있습니다.
+
+---
+
 ## 🎯 What is this?
 
 Finding the right influencer for a brief is a research problem. Marketing teams spend days scrolling through platforms, cross-referencing follower counts, checking demographics, and reading comments to guess whether a creator's audience matches a brand's target market. **AIIM collapses that into a single search + ranking pipeline:**
